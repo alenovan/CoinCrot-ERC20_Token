@@ -70,16 +70,16 @@ module.exports = {
     // },
 
     // Useful for private networks
-    // private: {
+     //private: {
       // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
       // network_id: 2111,   // This network is yours, in the cloud.
       // production: true    // Treats this network as if it was a public net. (default: false)
-    // }
+     //}
   },
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
-    // timeout: 100000
+    //timeout: 100000
   },
 
   // Configure your compilers

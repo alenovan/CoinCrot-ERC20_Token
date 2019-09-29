@@ -3,7 +3,7 @@ pragma solidity ^0.5.1;
 import "./CoinCrotToken.sol";
 
 contract CoinCrotTokenSale{
-    address admin;
+    address  admin;
     CoinCrotToken public tokenContract;
     uint256 public tokenPrice;
     uint256 public tokenSold;
@@ -39,6 +39,12 @@ contract CoinCrotTokenSale{
 
         // Trigger Sell Event
         emit Sell(msg.sender, _numberOfTokens);
+    }
+
+    function endSale() public {
+        require(msg.sender == admin);
+        require(tokenContract.transfer(admin, tokenContract.balanceOf(address(this))));
+        selfdestruct(msg.sender);
     }
 
 }
